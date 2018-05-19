@@ -1,0 +1,8 @@
+prefix=/home/leon/emg_project/devel
+
+Name: move_ur_script
+Description: Description of move_ur_script
+Version: 0.0.0
+Cflags: -I/home/leon/emg_project/devel/include
+Libs: -L/home/leon/emg_project/devel/lib 
+Requires: message_runtime

@@ -1,0 +1,7 @@
+<!-- Launch file for emg project.
+    And before this launch file , you should firstly run the zhanghengur10 zhanghengur10_planning_execution.launch-->
+<launch>
+    <node name = "ur_script_sub" pkg = "move_robot_using_action" type = "ur_script_sub.py"/>
+    <!--node name = "ur_script_pub" pkg = "move_robot_using_action" type = "ur_script_pub.py" output = "screen"/-->
+    <node name = "cal_speed" pkg = "move_robot_using_action" type = "cal_speed" output = "screen" />
+</launch>

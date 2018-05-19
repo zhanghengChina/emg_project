@@ -1,0 +1,2 @@
+armlet_imu:emg:move_robot_using_action:move_ur_script:sinsun_robot
+-DCMAKE_BUILD_TYPE=Debug -DCATKIN_DEVEL_PREFIX=/home/leon/emg_project/devel -DCMAKE_INSTALL_PREFIX=/home/leon/emg_project/install -G Unix Makefiles

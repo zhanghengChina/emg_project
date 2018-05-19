@@ -1,0 +1,8 @@
+prefix=/home/leon/emg_project/install
+
+Name: move_robot_using_action
+Description: Description of move_robot_using_action
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/leon/emg_project/install/lib 
+Requires: 

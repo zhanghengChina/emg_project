@@ -1,0 +1,6 @@
+<launch>
+    <arg name="joy" default="true"/>
+    <node name="socket_com_test" pkg="sinsun_robot" type="socket_com_test"/>
+    <node name="demo" pkg="sinsun_robot" type="demo" output="screen"/>
+    <node if="$(arg joy)" name="joy" pkg="joy" type="joy_node"/>
+</launch>
