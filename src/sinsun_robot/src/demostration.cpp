@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// 新松机器人真正控制的节点。
-=======
 // 这个节点的目的是为了最终控制机器人
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 // 因为传输过来的位置信息都是在基坐标系下面表示，除了最后转换速度的时候转换到了左右臂的坐标系下面，其余都是相对于基坐标系
 
 #include "ros/ros.h"
@@ -12,19 +8,12 @@
 #include <sys/socket.h>  
 #include <netinet/in.h>  
 #include <arpa/inet.h>  
-<<<<<<< HEAD
 #include "emg/imu.h"
-=======
-#include "emg/IMU_sEMG.h"
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 #include "move_ur_script/joint_value_target.h"
 #include "sinsun_robot/robot_state.h"
 #include "geometry_msgs/Pose.h"
 #include "sensor_msgs/Joy.h"
-<<<<<<< HEAD
 using namespace std;
-=======
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 
 class TCPIPAPI
 {//定义一个tcpip类，主要是用来做socket的初始化，用来发送数据接受数据   
@@ -104,11 +93,7 @@ private:
     sinsun_robot::robot_state global_dual_robot_state;                                                      // 机器人的状态信息
     geometry_msgs::Pose pose_now_left,pose_target_true_left,pose_target_left,pose_reference_left;           // 左臂机器人的末端位置
     geometry_msgs::Pose pose_now_right,pose_target_true_right,pose_target_right,pose_reference_right;       // 右臂机器人的末端位置
-<<<<<<< HEAD
     emg::imu global_msg;                                                                               // 接收到的IMU信息
-=======
-    emg::IMU_sEMG global_msg;                                                                               // 接收到的IMU信息
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 
 
     // 和机器人相关的变换
@@ -123,21 +108,14 @@ public:
         emg_data_flag = 0;
         robot_state_flag = 0;
 
-<<<<<<< HEAD
         max_acc = 2;
-=======
-        max_acc = 1.5;
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 
         eef_vel_left.resize(6);
         eef_vel_right.resize(6);
         max_vel.resize(3);
         pid_left.resize(3);
         pid_right.resize(3);
-<<<<<<< HEAD
         global_msg.data.resize(6);
-=======
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 
         joy_msg.buttons.resize(12);
         joy_msg.axes.resize(7);
@@ -145,12 +123,7 @@ public:
         //指定关节角速度极限
         pid_left = {5,5,5};
         pid_right = {5,5,5};
-<<<<<<< HEAD
-        max_vel = {0.08,0.08,0.08};
-=======
-        max_vel = {0.25,0.25,0.25};
-
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
+        max_vel = {0.3,0.3,0.3};
 
         rl.resize(9);
         rr.resize(9);
@@ -179,11 +152,10 @@ private:
     }
 
     // IMU信息的回调函数
-<<<<<<< HEAD
     void subCallback(const emg::imu::ConstPtr& msg)
     {
-        double beishu = 6;
-        double beishu_right = 6;
+        double beishu = 5;
+        double beishu_right = 5;
         if(emg_data_flag == 0) 
         {
             //相当于这个数据是一个总的参考点
@@ -250,43 +222,12 @@ private:
             }
         }
         return output;
-=======
-    void subCallback(const emg::IMU_sEMG::ConstPtr& msg)
-    {
-
-        // double beishu = 3.5;
-        // if(emg_data_flag == 0) 
-        // {
-        //     //相当于这个数据是一个总的参考点
-        //     global_msg.IMU_datax = msg->IMU_datax;
-        //     global_msg.IMU_datay = msg->IMU_datay;
-        //     global_msg.IMU_dataz = msg->IMU_dataz;
-        //     emg_data_flag = 1;
-        // }
-        // pose_target_true.position.x = pose_reference.position.x + (msg->IMU_datay - global_msg.IMU_datay)/beishu;
-        // pose_target_true.position.y = pose_reference.position.y - (msg->IMU_datax - global_msg.IMU_datax)/beishu;
-        // pose_target_true.position.z = pose_reference.position.z + (msg->IMU_dataz - global_msg.IMU_dataz)/beishu;
-
-        double beishu = 2.5;
-        if(emg_data_flag == 0) 
-        {
-            //相当于这个数据是一个总的参考点
-            global_msg.IMU_datax = msg->IMU_datax;
-            global_msg.IMU_datay = msg->IMU_datay;
-            global_msg.IMU_dataz = msg->IMU_dataz;
-            emg_data_flag = 1;
-        }
-        pose_target_true_left.position.x = pose_reference_left.position.x + (msg->IMU_datax - global_msg.IMU_datax)/beishu;
-        pose_target_true_left.position.y = pose_reference_left.position.y + (msg->IMU_datay - global_msg.IMU_datay)/beishu;
-        pose_target_true_left.position.z = pose_reference_left.position.z + (msg->IMU_dataz - global_msg.IMU_dataz)/beishu;
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
     }
 
     // 消息组合函数
     std::string combinemsg(std::vector<double> &velocity,std::vector<double> velocity_right, double &acc)
     {
         double time2move = 0;
-<<<<<<< HEAD
         std::string move_msg, mmm, nnn;
         move_msg = "speedl([";
 
@@ -356,24 +297,6 @@ private:
                 move_msg = move_msg + ",";
             }
         }        
-=======
-        std::string move_msg;
-        move_msg = "speedl([";
-        move_msg = move_msg + double2string(velocity[0]) + ",";
-        move_msg = move_msg + double2string(velocity[1]) + ",";
-        move_msg = move_msg + double2string(velocity[2]) + ",";
-        move_msg = move_msg + double2string(velocity[3]) + ",";
-        move_msg = move_msg + double2string(velocity[4]) + ",";
-        move_msg = move_msg + double2string(velocity[5]) + "],";
-        move_msg = move_msg + double2string(acc) + ",";
-        move_msg = move_msg + double2string(time2move) + ");$$$speedl([";
-        move_msg = move_msg + double2string(velocity_right[0]) + ",";
-        move_msg = move_msg + double2string(velocity_right[1]) + ",";
-        move_msg = move_msg + double2string(velocity_right[2]) + ",";
-        move_msg = move_msg + double2string(velocity_right[3]) + ",";
-        move_msg = move_msg + double2string(velocity_right[4]) + ",";
-        move_msg = move_msg + double2string(velocity_right[5]) + "],";
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
         move_msg = move_msg + double2string(acc) + ",";
         move_msg = move_msg + double2string(time2move);
         move_msg = move_msg + ");";
@@ -408,24 +331,16 @@ private:
 };
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 // 最重要的一个函数，所有的逻辑关系都在这个函数里面实现
 void emg_class::start()
 {
     robot_state_sub = nh.subscribe<sinsun_robot::robot_state>("robot_state",1000,&emg_class::robot_state_subcallback,this);
-<<<<<<< HEAD
     imu_sub = nh.subscribe<emg::imu>("imu_data", 1000, &emg_class::subCallback,this);
 
     joy_sub = nh.subscribe("joy", 1000, &emg_class::joy_subCallback,this);
 
-=======
-    imu_sub = nh.subscribe<emg::IMU_sEMG>("emg_data", 1000, &emg_class::subCallback,this);
-    joy_sub = nh.subscribe("joy", 1000, &emg_class::joy_subCallback,this);
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
     target_pub = nh.advertise<move_ur_script::joint_value_target>("pose_target", 1000);
     current_pub = nh.advertise<move_ur_script::joint_value_target>("pose_now", 1000);
     ros::Duration(1.0).sleep();
@@ -461,7 +376,6 @@ void emg_class::start()
         eef_vel_left[i] = 0;
         eef_vel_right[i] = 0;
     }
-<<<<<<< HEAD
 
     //ros::Time time_init = ros::Time::now();
     //Test the pid value of every direction
@@ -472,14 +386,6 @@ void emg_class::start()
     //     ros::Duration(1.0).sleep();
     // }
     /*while(ros::ok())
-=======
-    // move_msg = combinemsg(eef_vel_left,eef_vel_right,max_acc);
-    // ROS_INFO_STREAM("Sending msg "<<move_msg);
-
-    ros::Time time_init = ros::Time::now();
-    //Test the pid value of every direction
-    while(ros::ok())
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
     {
         pose_transform(global_dual_robot_state,pose_now_left,pose_now_right);
         ros::Duration interval = ros::Time::now() - time_init;
@@ -503,12 +409,6 @@ void emg_class::start()
                 eef_vel_left[i] = max_vel[i];
             if(eef_vel_left[i]<(-max_vel[i]))
                 eef_vel_left[i] = -max_vel[i];
-<<<<<<< HEAD
-=======
-
-            if(fabs(eef_vel_left[i])<1e-4)
-                eef_vel_left[i] = 0;
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
         }
 
         //publish target pose and current pose
@@ -559,22 +459,12 @@ void emg_class::start()
             ROS_INFO("No Joy Control");
         }
         
-<<<<<<< HEAD
     }*/
 
     Eigen::Vector3d eef_vel_left_before, eef_vel_right_before;
 
 
     while(ros::ok())//让机械臂运动的主要循环
-=======
-    }
-
-
-
-
-
-    /*while(ros::ok())//让机械臂运动的主要循环
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
     {
         if(emg_data_flag == 1)
         {
@@ -594,7 +484,6 @@ void emg_class::start()
                     ROS_INFO("Reveiving New Data Now!");
                     break;
                 }
-<<<<<<< HEAD
             }
             //更新数据
 
@@ -602,16 +491,6 @@ void emg_class::start()
             pose_target_right = pose_target_true_right;
 
 
-=======
-                else
-                {
-                    ROS_INFO("No Updated IMU Data!");
-                }
-            }
-            //更新数据
-            pose_target_left = pose_target_true_left;
-            pose_target_right = pose_target_true_right;
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
             if(1)
             {
                 pose_transform(global_dual_robot_state,pose_now_left,pose_now_right);
@@ -636,7 +515,6 @@ void emg_class::start()
 
                 for(int i = 0 ; i < 3; i ++)
                 {
-<<<<<<< HEAD
                     if(fabs(eef_vel_left[i]) > max_vel[i])
                     {
                         eef_vel_left[i] = eef_vel_left_before[i];
@@ -665,23 +543,6 @@ void emg_class::start()
                             eef_vel_right[i] = -max_vel[i];
                         }
                     }
-=======
-                    if(eef_vel_left[i]>max_vel[i])
-                        eef_vel_left[i] = max_vel[i];
-                    if(eef_vel_left[i]<(-max_vel[i]))
-                        eef_vel_left[i] = -max_vel[i];
-                    
-                    if(fabs(eef_vel_left[i])<1e-4)
-                        eef_vel_left[i] = 0;
-                    // 因为新松的机器人不接受这种带有科学计数法表示的数字
-                    if(eef_vel_right[i]>max_vel[i])
-                        eef_vel_right[i] = max_vel[i];
-                    if(eef_vel_right[i]<(-max_vel[i]))
-                        eef_vel_right[i] = -max_vel[i];
-      
-                    if(fabs(eef_vel_right[i])<1e-4)
-                        eef_vel_right[i] = 0;
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
                 }
 
                 //publish target pose and current pose
@@ -712,15 +573,12 @@ void emg_class::start()
 
                 ROS_INFO_STREAM("Sending msg "<<move_msg);
                 tcpip.send_msg(move_msg);
-<<<<<<< HEAD
 
                 for(int i = 0 ; i < 3 ; i ++)
                 {
                     eef_vel_left_before[i] = eef_vel_left[i];
                     eef_vel_right_before[i] = eef_vel_right[i];
                 }
-=======
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
             }
         }
         else
@@ -732,7 +590,6 @@ void emg_class::start()
         // 如果按键按下，机器人将会发送停止指令并且关闭网口通信
         if(joy_msg.buttons[1] == 1)
         {
-<<<<<<< HEAD
             move_msg = "speedl([0,0,0,0,0,0],1,0);$$$speedl([0,0,0,0,0,0],1,0);";
             tcpip.send_msg(move_msg);
             ros::Duration(0.5).sleep();
@@ -743,19 +600,6 @@ void emg_class::start()
             // tcpip.close_socket();
         }
     }
-=======
-            move_msg = "speedl([0,0,0,0,0,0],1,1);$$$speedl([0,0,0,0,0,0],1,1);";
-            tcpip.send_msg(move_msg);
-            ros::Duration(0.5).sleep();
-            tcpip.close_socket();
-
-            move_msg = "movej([0,0,0,0,0,0,0],30,100);$$$movej([0,0,0,0,0,0,0],30,100);";
-            tcpip.send_msg(move_msg);
-            ros::Duration(5).sleep();
-            tcpip.close_socket();
-        }
-    }*/
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 }
 
 int main(int argc, char *argv[])  

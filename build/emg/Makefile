@@ -150,20 +150,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/rule:
-	cd /home/leon/emg_project/build && $(MAKE) -f CMakeFiles/Makefile2 emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/rule
-.PHONY : emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/rule
-
-# Convenience name for target.
-ReceiveEmgDataAndSendingToUR: emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/rule
-.PHONY : ReceiveEmgDataAndSendingToUR
-
-# fast build rule for target.
-ReceiveEmgDataAndSendingToUR/fast:
-	cd /home/leon/emg_project/build && $(MAKE) -f emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/build.make emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/build
-.PHONY : ReceiveEmgDataAndSendingToUR/fast
-
-# Convenience name for target.
 emg/CMakeFiles/Receiving_new.dir/rule:
 	cd /home/leon/emg_project/build && $(MAKE) -f CMakeFiles/Makefile2 emg/CMakeFiles/Receiving_new.dir/rule
 .PHONY : emg/CMakeFiles/Receiving_new.dir/rule
@@ -947,30 +933,6 @@ visualization_msgs_generate_messages_py/fast:
 	cd /home/leon/emg_project/build && $(MAKE) -f emg/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make emg/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
 .PHONY : visualization_msgs_generate_messages_py/fast
 
-src/ReceiveEmgDataAndSendingToUR.o: src/ReceiveEmgDataAndSendingToUR.cpp.o
-.PHONY : src/ReceiveEmgDataAndSendingToUR.o
-
-# target to build an object file
-src/ReceiveEmgDataAndSendingToUR.cpp.o:
-	cd /home/leon/emg_project/build && $(MAKE) -f emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/build.make emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/src/ReceiveEmgDataAndSendingToUR.cpp.o
-.PHONY : src/ReceiveEmgDataAndSendingToUR.cpp.o
-
-src/ReceiveEmgDataAndSendingToUR.i: src/ReceiveEmgDataAndSendingToUR.cpp.i
-.PHONY : src/ReceiveEmgDataAndSendingToUR.i
-
-# target to preprocess a source file
-src/ReceiveEmgDataAndSendingToUR.cpp.i:
-	cd /home/leon/emg_project/build && $(MAKE) -f emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/build.make emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/src/ReceiveEmgDataAndSendingToUR.cpp.i
-.PHONY : src/ReceiveEmgDataAndSendingToUR.cpp.i
-
-src/ReceiveEmgDataAndSendingToUR.s: src/ReceiveEmgDataAndSendingToUR.cpp.s
-.PHONY : src/ReceiveEmgDataAndSendingToUR.s
-
-# target to generate assembly for a file
-src/ReceiveEmgDataAndSendingToUR.cpp.s:
-	cd /home/leon/emg_project/build && $(MAKE) -f emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/build.make emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/src/ReceiveEmgDataAndSendingToUR.cpp.s
-.PHONY : src/ReceiveEmgDataAndSendingToUR.cpp.s
-
 src/Receiving_new.o: src/Receiving_new.cpp.o
 .PHONY : src/Receiving_new.o
 
@@ -1097,7 +1059,6 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... ReceiveEmgDataAndSendingToUR"
 	@echo "... Receiving_new"
 	@echo "... Receiving_sinsun_robot"
 	@echo "... _catkin_empty_exported_target"
@@ -1161,9 +1122,6 @@ help:
 	@echo "... visualization_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_py"
-	@echo "... src/ReceiveEmgDataAndSendingToUR.o"
-	@echo "... src/ReceiveEmgDataAndSendingToUR.i"
-	@echo "... src/ReceiveEmgDataAndSendingToUR.s"
 	@echo "... src/Receiving_new.o"
 	@echo "... src/Receiving_new.i"
 	@echo "... src/Receiving_new.s"

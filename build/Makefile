@@ -384,19 +384,6 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named ReceiveEmgDataAndSendingToUR
-
-# Build rule for target.
-ReceiveEmgDataAndSendingToUR: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ReceiveEmgDataAndSendingToUR
-.PHONY : ReceiveEmgDataAndSendingToUR
-
-# fast build rule for target.
-ReceiveEmgDataAndSendingToUR/fast:
-	$(MAKE) -f emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/build.make emg/CMakeFiles/ReceiveEmgDataAndSendingToUR.dir/build
-.PHONY : ReceiveEmgDataAndSendingToUR/fast
-
-#=============================================================================
 # Target rules for targets named Receiving_new
 
 # Build rule for target.
@@ -1411,30 +1398,30 @@ _sinsun_robot_generate_messages_check_deps_robot_state/fast:
 .PHONY : _sinsun_robot_generate_messages_check_deps_robot_state/fast
 
 #=============================================================================
-# Target rules for targets named command_test
+# Target rules for targets named cmd_test
 
 # Build rule for target.
-command_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 command_test
-.PHONY : command_test
+cmd_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cmd_test
+.PHONY : cmd_test
 
 # fast build rule for target.
-command_test/fast:
-	$(MAKE) -f sinsun_robot/CMakeFiles/command_test.dir/build.make sinsun_robot/CMakeFiles/command_test.dir/build
-.PHONY : command_test/fast
+cmd_test/fast:
+	$(MAKE) -f sinsun_robot/CMakeFiles/cmd_test.dir/build.make sinsun_robot/CMakeFiles/cmd_test.dir/build
+.PHONY : cmd_test/fast
 
 #=============================================================================
-# Target rules for targets named demo
+# Target rules for targets named demostration
 
 # Build rule for target.
-demo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 demo
-.PHONY : demo
+demostration: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 demostration
+.PHONY : demostration
 
 # fast build rule for target.
-demo/fast:
-	$(MAKE) -f sinsun_robot/CMakeFiles/demo.dir/build.make sinsun_robot/CMakeFiles/demo.dir/build
-.PHONY : demo/fast
+demostration/fast:
+	$(MAKE) -f sinsun_robot/CMakeFiles/demostration.dir/build.make sinsun_robot/CMakeFiles/demostration.dir/build
+.PHONY : demostration/fast
 
 #=============================================================================
 # Target rules for targets named hdh_com
@@ -1450,17 +1437,17 @@ hdh_com/fast:
 .PHONY : hdh_com/fast
 
 #=============================================================================
-# Target rules for targets named single_arm_control
+# Target rules for targets named sct_test
 
 # Build rule for target.
-single_arm_control: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 single_arm_control
-.PHONY : single_arm_control
+sct_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sct_test
+.PHONY : sct_test
 
 # fast build rule for target.
-single_arm_control/fast:
-	$(MAKE) -f sinsun_robot/CMakeFiles/single_arm_control.dir/build.make sinsun_robot/CMakeFiles/single_arm_control.dir/build
-.PHONY : single_arm_control/fast
+sct_test/fast:
+	$(MAKE) -f sinsun_robot/CMakeFiles/sct_test.dir/build.make sinsun_robot/CMakeFiles/sct_test.dir/build
+.PHONY : sct_test/fast
 
 #=============================================================================
 # Target rules for targets named sinsun_robot_gencpp
@@ -1553,19 +1540,6 @@ sinsun_robot_genpy/fast:
 	$(MAKE) -f sinsun_robot/CMakeFiles/sinsun_robot_genpy.dir/build.make sinsun_robot/CMakeFiles/sinsun_robot_genpy.dir/build
 .PHONY : sinsun_robot_genpy/fast
 
-#=============================================================================
-# Target rules for targets named socket_com_test
-
-# Build rule for target.
-socket_com_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 socket_com_test
-.PHONY : socket_com_test
-
-# fast build rule for target.
-socket_com_test/fast:
-	$(MAKE) -f sinsun_robot/CMakeFiles/socket_com_test.dir/build.make sinsun_robot/CMakeFiles/socket_com_test.dir/build
-.PHONY : socket_com_test/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1597,7 +1571,6 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... ReceiveEmgDataAndSendingToUR"
 	@echo "... Receiving_new"
 	@echo "... Receiving_sinsun_robot"
 	@echo "... _catkin_empty_exported_target"
@@ -1676,10 +1649,10 @@ help:
 	@echo "... speedl_method"
 	@echo "... tcpiptest"
 	@echo "... _sinsun_robot_generate_messages_check_deps_robot_state"
-	@echo "... command_test"
-	@echo "... demo"
+	@echo "... cmd_test"
+	@echo "... demostration"
 	@echo "... hdh_com"
-	@echo "... single_arm_control"
+	@echo "... sct_test"
 	@echo "... sinsun_robot_gencpp"
 	@echo "... sinsun_robot_generate_messages"
 	@echo "... sinsun_robot_generate_messages_cpp"
@@ -1687,7 +1660,6 @@ help:
 	@echo "... sinsun_robot_generate_messages_py"
 	@echo "... sinsun_robot_genlisp"
 	@echo "... sinsun_robot_genpy"
-	@echo "... socket_com_test"
 .PHONY : help
 
 

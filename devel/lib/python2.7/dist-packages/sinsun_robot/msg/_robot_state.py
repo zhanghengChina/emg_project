@@ -13,8 +13,7 @@ class robot_state(genpy.Message):
   _full_text = """float64[] currentFlangePostion
 float64[] currentFlangePostionRight
 float64[] axisCurrentAngle
-float64[] axisCurrentAngleRight
-"""
+float64[] axisCurrentAngleRight"""
   __slots__ = ['currentFlangePostion','currentFlangePostionRight','axisCurrentAngle','axisCurrentAngleRight']
   _slot_types = ['float64[]','float64[]','float64[]','float64[]']
 

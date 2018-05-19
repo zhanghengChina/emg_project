@@ -209,10 +209,10 @@
   "3dcf316e4e53981483352b964db6e5f9")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<robot_state>)))
   "Returns full string definition for message of type '<robot_state>"
-  (cl:format cl:nil "float64[] currentFlangePostion~%float64[] currentFlangePostionRight~%float64[] axisCurrentAngle~%float64[] axisCurrentAngleRight~%~%~%"))
+  (cl:format cl:nil "float64[] currentFlangePostion~%float64[] currentFlangePostionRight~%float64[] axisCurrentAngle~%float64[] axisCurrentAngleRight~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'robot_state)))
   "Returns full string definition for message of type 'robot_state"
-  (cl:format cl:nil "float64[] currentFlangePostion~%float64[] currentFlangePostionRight~%float64[] axisCurrentAngle~%float64[] axisCurrentAngleRight~%~%~%"))
+  (cl:format cl:nil "float64[] currentFlangePostion~%float64[] currentFlangePostionRight~%float64[] axisCurrentAngle~%float64[] axisCurrentAngleRight~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <robot_state>))
   (cl:+ 0
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'currentFlangePostion) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))

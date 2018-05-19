@@ -1,0 +1,6 @@
+<launch>
+    <arg name="joy" default="true"/>
+    <node name="sct_test" pkg="sinsun_robot" type="sct_test"/>
+    <node name="demo" pkg="sinsun_robot" type="demostration" output="screen"/>
+    <node if="$(arg joy)" name="joy" pkg="joy" type="joy_node"/>
+</launch>

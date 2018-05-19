@@ -122,11 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-<<<<<<< HEAD
     foreach(path /home/leon/emg_project/install/lib;/home/leon/kinect2/kinect_ros_support/devel/lib;/home/leon/zzm/devel/lib;/home/leon/zack/devel/lib;/home/leon/emg_project/devel/lib;/home/leon/graspdemo/devel/lib;/home/leon/mobile_manipulator/devel/lib;/home/leon/catkin/devel/lib;/opt/ros/indigo/lib)
-=======
-    foreach(path /home/leon/emg_project/install/lib;/home/leon/emg_project/devel/lib;/opt/ros/indigo/lib)
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

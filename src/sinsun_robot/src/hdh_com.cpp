@@ -1,11 +1,7 @@
 
-<<<<<<< HEAD
 // 将实时的机器人的关节数据发送给郝德宏
 // 运行时需要hdh的服务器打开
-
-=======
 //将实时的机器人的关节数据发送给郝德宏
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include <stdio.h>  

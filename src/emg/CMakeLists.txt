@@ -218,14 +218,6 @@ target_link_libraries(tfdata
   ${catkin_LIBRARIES}
 )
 
-add_executable(ReceiveEmgDataAndSendingToUR
-  src/ReceiveEmgDataAndSendingToUR.cpp
-)
-add_dependencies(ReceiveEmgDataAndSendingToUR ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(ReceiveEmgDataAndSendingToUR
-  ${catkin_LIBRARIES}
-)
-
 add_executable(Receiving_new
   src/Receiving_new.cpp
 )

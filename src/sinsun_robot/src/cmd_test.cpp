@@ -1,13 +1,7 @@
 
-<<<<<<< HEAD
-// 测试新松机器人的控制指令
-
-#include "ros/ros.h"
-#include "string"
-=======
 // 测试机器人的控制指令
 #include "ros/ros.h"
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
+#include "string"
 #include <Eigen/Geometry>  
 #include <stdio.h>  
 #include <sys/types.h>  
@@ -15,7 +9,6 @@
 #include <netinet/in.h>  
 #include <arpa/inet.h>  
 #include "sinsun_robot/robot_state.h"
-<<<<<<< HEAD
 #include "std_msgs/String.h"
 
 using namespace std;
@@ -24,11 +17,6 @@ std::string double2string(double &input);
 std::string combine(Eigen::Vector3d &vel_left, Eigen::Vector3d &vel_right);
 std::string convert(string& input);
 
-=======
-
-std::string double2string(double &input);
-std::string combine(Eigen::Vector3d &vel_left, Eigen::Vector3d &vel_right);
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 
 int main(int argc, char *argv[])  
 {  
@@ -57,7 +45,6 @@ int main(int argc, char *argv[])
 
     ROS_INFO_STREAM("Connected to server"); 
 
-<<<<<<< HEAD
     string input = "1.2255e-03";
     string output = convert(input);
     cout<<"shuchu: "<<output<<endl;
@@ -68,8 +55,6 @@ int main(int argc, char *argv[])
     cout<<"hfjdksa:"<<ddddd<<endl;
 
 
-=======
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 
     std::string msg;
     // 测试机器人的旋转矩阵等
@@ -78,10 +63,7 @@ int main(int argc, char *argv[])
     Eigen::Matrix<double,3,3>  rotation_base_to_left_arm, rotation_base_to_right_arm;
     rotation_base_to_left_arm<<rl[0],rl[1],rl[2],rl[3],rl[4],rl[5],rl[6],rl[7],rl[8];
     rotation_base_to_right_arm<<rr[0],rr[1],rr[2],rr[3],rr[4],rr[5],rr[6],rr[7],rr[8];
-<<<<<<< HEAD
 
-=======
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
     ROS_INFO_STREAM("Rotation from base to left arm is:\n "<<rotation_base_to_left_arm);
     ROS_INFO_STREAM("The determinant of the rotation(left) is\n"<<rotation_base_to_left_arm.determinant());
     ROS_INFO_STREAM("Rotation from base to right arm is:\n"<<rotation_base_to_right_arm);
@@ -89,23 +71,16 @@ int main(int argc, char *argv[])
 
     Eigen::Vector3d vel_left_in_base, vel_left_in_left_arm;
     Eigen::Vector3d vel_right_in_base, vel_right_in_right_arm;
-<<<<<<< HEAD
     vel_left_in_base = {0,0,0};
-=======
-    vel_left_in_base = {0,0.01,0};
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
     vel_right_in_base = {0,0.01,0};
 
     vel_left_in_left_arm = rotation_base_to_left_arm*vel_left_in_base;
     vel_right_in_right_arm = rotation_base_to_right_arm*vel_right_in_base;
-<<<<<<< HEAD
 
     cout<<"vel_left\n"<<vel_left_in_left_arm<<endl;
     cout<<"vel_right\n"<<vel_right_in_right_arm<<endl;
 
 
-=======
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
     //ROS_INFO_STREAM("The speed of the robot is \n"<<vel_in_left_arm);
     msg = combine(vel_left_in_left_arm,vel_right_in_right_arm);
 
@@ -128,7 +103,6 @@ int main(int argc, char *argv[])
 
 std::string combine(Eigen::Vector3d &vel_left, Eigen::Vector3d &vel_right)
 {
-<<<<<<< HEAD
     std::string msg, mmm, nnn;
     msg = msg + "speedl([";
     for(int i = 0 ; i < 3 ; i ++)
@@ -153,19 +127,11 @@ std::string combine(Eigen::Vector3d &vel_left, Eigen::Vector3d &vel_right)
         }
 
         msg = msg + nnn;
-=======
-    std::string msg;
-    msg = msg + "speedl([";
-    for(int i = 0 ; i < 3 ; i ++)
-    {
-        msg = msg + double2string(vel_left[i]);
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
         msg = msg + ",";
     }
     msg = msg + "0,0,0],2,0);$$$speedl([";
     for(int i = 0 ; i < 3 ; i ++)
     {
-<<<<<<< HEAD
         if(fabs(vel_right[i])<1e-4)
         {
             if(fabs(vel_right[i])<1e-6)
@@ -183,35 +149,10 @@ std::string combine(Eigen::Vector3d &vel_left, Eigen::Vector3d &vel_right)
             nnn = double2string(vel_right[i]);
         }
         msg = msg + nnn;
-=======
-        msg = msg + double2string(vel_right[i]);
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
         msg = msg + ",";
     }
     msg = msg + "0,0,0],2,0);";
     return msg;
-<<<<<<< HEAD
-=======
-
-    // for(int left = 0 ; left < n; left++)
-    // {
-    //     msg = msg + double2string(axisCurrentAngle[left]);
-    //     msg = msg + ",";
-    // }
-    // for(int right = 0 ; right < m ; right ++)
-    // {
-    //     if(right == m-1)
-    //     {
-    //         msg = msg + double2string(axisCurrentAngleRight[right]);
-    //     }
-    //     else
-    //     {
-    //         msg = msg + double2string(axisCurrentAngleRight[right]);
-    //         msg = msg + ",";
-    //     }
-    // }
-    return msg;
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 }
 
 std::string double2string(double &input)
@@ -221,7 +162,6 @@ std::string double2string(double &input)
     stream<<input;
     string_temp = stream.str();
     return string_temp;
-<<<<<<< HEAD
 }
 
 
@@ -266,6 +206,4 @@ string convert(string& input)
         }
     }
     return output;
-=======
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 }

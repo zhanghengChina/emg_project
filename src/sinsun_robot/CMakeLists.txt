@@ -7,7 +7,16 @@ add_compile_options(-std=c++11)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS geometry_msgs message_generation message_generation roscpp rospy std_msgs emg move_ur_script)
+find_package(catkin REQUIRED COMPONENTS
+  emg
+  geometry_msgs
+  message_generation
+  message_generation
+  move_ur_script
+  roscpp
+  rospy
+  std_msgs
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -100,7 +109,7 @@ catkin_package(
   message_runtime
 #  INCLUDE_DIRS include
 #  LIBRARIES sinsun_robot
-#  CATKIN_DEPENDS geometry_msgs message_generation message_generation roscpp rospy std_msgs
+#  CATKIN_DEPENDS emg geometry_msgs message_generation message_generation move_ur_script roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -195,14 +204,6 @@ include_directories(
 # catkin_add_nosetests(test)
 
 
-add_executable(socket_com_test
-  src/socket_com_test.cpp
-)
-add_dependencies(socket_com_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(socket_com_test
-  ${catkin_LIBRARIES}
-)
-
 add_executable(hdh_com
   src/hdh_com.cpp
 )
@@ -211,29 +212,26 @@ target_link_libraries(hdh_com
   ${catkin_LIBRARIES}
 )
 
-<<<<<<< HEAD
-=======
-add_executable(single_arm_control
-  src/single_arm_control.cpp
+add_executable(cmd_test
+  src/cmd_test.cpp
 )
-add_dependencies(single_arm_control ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(single_arm_control
+add_dependencies(cmd_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(cmd_test
   ${catkin_LIBRARIES}
 )
 
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
-add_executable(command_test
-  src/command_test.cpp
+add_executable(sct_test
+  src/sct_test.cpp
 )
-add_dependencies(command_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(command_test
+add_dependencies(sct_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(sct_test
   ${catkin_LIBRARIES}
 )
 
-add_executable(demo
-  src/demo.cpp
+add_executable(demostration
+  src/demostration.cpp
 )
-add_dependencies(demo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(demo
+add_dependencies(demostration ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(demostration
   ${catkin_LIBRARIES}
 )

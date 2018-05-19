@@ -1,9 +1,7 @@
-<<<<<<< HEAD
+
 // 从新松机器人获取信息，包括关节角度，末端位置等信息
 // 发送出去的末端位置都是经过旋转变换之后的了。
 
-=======
->>>>>>> 0bcb0d2209f44d23003687044b46464286c1b7d4
 #include "ros/ros.h"
 #include "sinsun_robot/robot_state.h"
 #include "std_msgs/String.h"

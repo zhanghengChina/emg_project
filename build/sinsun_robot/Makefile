@@ -164,32 +164,32 @@ _sinsun_robot_generate_messages_check_deps_robot_state/fast:
 .PHONY : _sinsun_robot_generate_messages_check_deps_robot_state/fast
 
 # Convenience name for target.
-sinsun_robot/CMakeFiles/command_test.dir/rule:
-	cd /home/leon/emg_project/build && $(MAKE) -f CMakeFiles/Makefile2 sinsun_robot/CMakeFiles/command_test.dir/rule
-.PHONY : sinsun_robot/CMakeFiles/command_test.dir/rule
+sinsun_robot/CMakeFiles/cmd_test.dir/rule:
+	cd /home/leon/emg_project/build && $(MAKE) -f CMakeFiles/Makefile2 sinsun_robot/CMakeFiles/cmd_test.dir/rule
+.PHONY : sinsun_robot/CMakeFiles/cmd_test.dir/rule
 
 # Convenience name for target.
-command_test: sinsun_robot/CMakeFiles/command_test.dir/rule
-.PHONY : command_test
+cmd_test: sinsun_robot/CMakeFiles/cmd_test.dir/rule
+.PHONY : cmd_test
 
 # fast build rule for target.
-command_test/fast:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/command_test.dir/build.make sinsun_robot/CMakeFiles/command_test.dir/build
-.PHONY : command_test/fast
+cmd_test/fast:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/cmd_test.dir/build.make sinsun_robot/CMakeFiles/cmd_test.dir/build
+.PHONY : cmd_test/fast
 
 # Convenience name for target.
-sinsun_robot/CMakeFiles/demo.dir/rule:
-	cd /home/leon/emg_project/build && $(MAKE) -f CMakeFiles/Makefile2 sinsun_robot/CMakeFiles/demo.dir/rule
-.PHONY : sinsun_robot/CMakeFiles/demo.dir/rule
+sinsun_robot/CMakeFiles/demostration.dir/rule:
+	cd /home/leon/emg_project/build && $(MAKE) -f CMakeFiles/Makefile2 sinsun_robot/CMakeFiles/demostration.dir/rule
+.PHONY : sinsun_robot/CMakeFiles/demostration.dir/rule
 
 # Convenience name for target.
-demo: sinsun_robot/CMakeFiles/demo.dir/rule
-.PHONY : demo
+demostration: sinsun_robot/CMakeFiles/demostration.dir/rule
+.PHONY : demostration
 
 # fast build rule for target.
-demo/fast:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/demo.dir/build.make sinsun_robot/CMakeFiles/demo.dir/build
-.PHONY : demo/fast
+demostration/fast:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/demostration.dir/build.make sinsun_robot/CMakeFiles/demostration.dir/build
+.PHONY : demostration/fast
 
 # Convenience name for target.
 sinsun_robot/CMakeFiles/hdh_com.dir/rule:
@@ -206,18 +206,18 @@ hdh_com/fast:
 .PHONY : hdh_com/fast
 
 # Convenience name for target.
-sinsun_robot/CMakeFiles/single_arm_control.dir/rule:
-	cd /home/leon/emg_project/build && $(MAKE) -f CMakeFiles/Makefile2 sinsun_robot/CMakeFiles/single_arm_control.dir/rule
-.PHONY : sinsun_robot/CMakeFiles/single_arm_control.dir/rule
+sinsun_robot/CMakeFiles/sct_test.dir/rule:
+	cd /home/leon/emg_project/build && $(MAKE) -f CMakeFiles/Makefile2 sinsun_robot/CMakeFiles/sct_test.dir/rule
+.PHONY : sinsun_robot/CMakeFiles/sct_test.dir/rule
 
 # Convenience name for target.
-single_arm_control: sinsun_robot/CMakeFiles/single_arm_control.dir/rule
-.PHONY : single_arm_control
+sct_test: sinsun_robot/CMakeFiles/sct_test.dir/rule
+.PHONY : sct_test
 
 # fast build rule for target.
-single_arm_control/fast:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/single_arm_control.dir/build.make sinsun_robot/CMakeFiles/single_arm_control.dir/build
-.PHONY : single_arm_control/fast
+sct_test/fast:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/sct_test.dir/build.make sinsun_robot/CMakeFiles/sct_test.dir/build
+.PHONY : sct_test/fast
 
 # Convenience name for target.
 sinsun_robot/CMakeFiles/sinsun_robot_gencpp.dir/rule:
@@ -317,67 +317,53 @@ sinsun_robot_genpy/fast:
 	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/sinsun_robot_genpy.dir/build.make sinsun_robot/CMakeFiles/sinsun_robot_genpy.dir/build
 .PHONY : sinsun_robot_genpy/fast
 
-# Convenience name for target.
-sinsun_robot/CMakeFiles/socket_com_test.dir/rule:
-	cd /home/leon/emg_project/build && $(MAKE) -f CMakeFiles/Makefile2 sinsun_robot/CMakeFiles/socket_com_test.dir/rule
-.PHONY : sinsun_robot/CMakeFiles/socket_com_test.dir/rule
-
-# Convenience name for target.
-socket_com_test: sinsun_robot/CMakeFiles/socket_com_test.dir/rule
-.PHONY : socket_com_test
-
-# fast build rule for target.
-socket_com_test/fast:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/socket_com_test.dir/build.make sinsun_robot/CMakeFiles/socket_com_test.dir/build
-.PHONY : socket_com_test/fast
-
-src/command_test.o: src/command_test.cpp.o
-.PHONY : src/command_test.o
+src/cmd_test.o: src/cmd_test.cpp.o
+.PHONY : src/cmd_test.o
 
 # target to build an object file
-src/command_test.cpp.o:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/command_test.dir/build.make sinsun_robot/CMakeFiles/command_test.dir/src/command_test.cpp.o
-.PHONY : src/command_test.cpp.o
+src/cmd_test.cpp.o:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/cmd_test.dir/build.make sinsun_robot/CMakeFiles/cmd_test.dir/src/cmd_test.cpp.o
+.PHONY : src/cmd_test.cpp.o
 
-src/command_test.i: src/command_test.cpp.i
-.PHONY : src/command_test.i
+src/cmd_test.i: src/cmd_test.cpp.i
+.PHONY : src/cmd_test.i
 
 # target to preprocess a source file
-src/command_test.cpp.i:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/command_test.dir/build.make sinsun_robot/CMakeFiles/command_test.dir/src/command_test.cpp.i
-.PHONY : src/command_test.cpp.i
+src/cmd_test.cpp.i:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/cmd_test.dir/build.make sinsun_robot/CMakeFiles/cmd_test.dir/src/cmd_test.cpp.i
+.PHONY : src/cmd_test.cpp.i
 
-src/command_test.s: src/command_test.cpp.s
-.PHONY : src/command_test.s
+src/cmd_test.s: src/cmd_test.cpp.s
+.PHONY : src/cmd_test.s
 
 # target to generate assembly for a file
-src/command_test.cpp.s:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/command_test.dir/build.make sinsun_robot/CMakeFiles/command_test.dir/src/command_test.cpp.s
-.PHONY : src/command_test.cpp.s
+src/cmd_test.cpp.s:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/cmd_test.dir/build.make sinsun_robot/CMakeFiles/cmd_test.dir/src/cmd_test.cpp.s
+.PHONY : src/cmd_test.cpp.s
 
-src/demo.o: src/demo.cpp.o
-.PHONY : src/demo.o
+src/demostration.o: src/demostration.cpp.o
+.PHONY : src/demostration.o
 
 # target to build an object file
-src/demo.cpp.o:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/demo.dir/build.make sinsun_robot/CMakeFiles/demo.dir/src/demo.cpp.o
-.PHONY : src/demo.cpp.o
+src/demostration.cpp.o:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/demostration.dir/build.make sinsun_robot/CMakeFiles/demostration.dir/src/demostration.cpp.o
+.PHONY : src/demostration.cpp.o
 
-src/demo.i: src/demo.cpp.i
-.PHONY : src/demo.i
+src/demostration.i: src/demostration.cpp.i
+.PHONY : src/demostration.i
 
 # target to preprocess a source file
-src/demo.cpp.i:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/demo.dir/build.make sinsun_robot/CMakeFiles/demo.dir/src/demo.cpp.i
-.PHONY : src/demo.cpp.i
+src/demostration.cpp.i:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/demostration.dir/build.make sinsun_robot/CMakeFiles/demostration.dir/src/demostration.cpp.i
+.PHONY : src/demostration.cpp.i
 
-src/demo.s: src/demo.cpp.s
-.PHONY : src/demo.s
+src/demostration.s: src/demostration.cpp.s
+.PHONY : src/demostration.s
 
 # target to generate assembly for a file
-src/demo.cpp.s:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/demo.dir/build.make sinsun_robot/CMakeFiles/demo.dir/src/demo.cpp.s
-.PHONY : src/demo.cpp.s
+src/demostration.cpp.s:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/demostration.dir/build.make sinsun_robot/CMakeFiles/demostration.dir/src/demostration.cpp.s
+.PHONY : src/demostration.cpp.s
 
 src/hdh_com.o: src/hdh_com.cpp.o
 .PHONY : src/hdh_com.o
@@ -403,53 +389,29 @@ src/hdh_com.cpp.s:
 	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/hdh_com.dir/build.make sinsun_robot/CMakeFiles/hdh_com.dir/src/hdh_com.cpp.s
 .PHONY : src/hdh_com.cpp.s
 
-src/single_arm_control.o: src/single_arm_control.cpp.o
-.PHONY : src/single_arm_control.o
+src/sct_test.o: src/sct_test.cpp.o
+.PHONY : src/sct_test.o
 
 # target to build an object file
-src/single_arm_control.cpp.o:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/single_arm_control.dir/build.make sinsun_robot/CMakeFiles/single_arm_control.dir/src/single_arm_control.cpp.o
-.PHONY : src/single_arm_control.cpp.o
+src/sct_test.cpp.o:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/sct_test.dir/build.make sinsun_robot/CMakeFiles/sct_test.dir/src/sct_test.cpp.o
+.PHONY : src/sct_test.cpp.o
 
-src/single_arm_control.i: src/single_arm_control.cpp.i
-.PHONY : src/single_arm_control.i
-
-# target to preprocess a source file
-src/single_arm_control.cpp.i:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/single_arm_control.dir/build.make sinsun_robot/CMakeFiles/single_arm_control.dir/src/single_arm_control.cpp.i
-.PHONY : src/single_arm_control.cpp.i
-
-src/single_arm_control.s: src/single_arm_control.cpp.s
-.PHONY : src/single_arm_control.s
-
-# target to generate assembly for a file
-src/single_arm_control.cpp.s:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/single_arm_control.dir/build.make sinsun_robot/CMakeFiles/single_arm_control.dir/src/single_arm_control.cpp.s
-.PHONY : src/single_arm_control.cpp.s
-
-src/socket_com_test.o: src/socket_com_test.cpp.o
-.PHONY : src/socket_com_test.o
-
-# target to build an object file
-src/socket_com_test.cpp.o:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/socket_com_test.dir/build.make sinsun_robot/CMakeFiles/socket_com_test.dir/src/socket_com_test.cpp.o
-.PHONY : src/socket_com_test.cpp.o
-
-src/socket_com_test.i: src/socket_com_test.cpp.i
-.PHONY : src/socket_com_test.i
+src/sct_test.i: src/sct_test.cpp.i
+.PHONY : src/sct_test.i
 
 # target to preprocess a source file
-src/socket_com_test.cpp.i:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/socket_com_test.dir/build.make sinsun_robot/CMakeFiles/socket_com_test.dir/src/socket_com_test.cpp.i
-.PHONY : src/socket_com_test.cpp.i
+src/sct_test.cpp.i:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/sct_test.dir/build.make sinsun_robot/CMakeFiles/sct_test.dir/src/sct_test.cpp.i
+.PHONY : src/sct_test.cpp.i
 
-src/socket_com_test.s: src/socket_com_test.cpp.s
-.PHONY : src/socket_com_test.s
+src/sct_test.s: src/sct_test.cpp.s
+.PHONY : src/sct_test.s
 
 # target to generate assembly for a file
-src/socket_com_test.cpp.s:
-	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/socket_com_test.dir/build.make sinsun_robot/CMakeFiles/socket_com_test.dir/src/socket_com_test.cpp.s
-.PHONY : src/socket_com_test.cpp.s
+src/sct_test.cpp.s:
+	cd /home/leon/emg_project/build && $(MAKE) -f sinsun_robot/CMakeFiles/sct_test.dir/build.make sinsun_robot/CMakeFiles/sct_test.dir/src/sct_test.cpp.s
+.PHONY : src/sct_test.cpp.s
 
 # Help Target
 help:
@@ -458,8 +420,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... _sinsun_robot_generate_messages_check_deps_robot_state"
-	@echo "... command_test"
-	@echo "... demo"
+	@echo "... cmd_test"
+	@echo "... demostration"
 	@echo "... edit_cache"
 	@echo "... hdh_com"
 	@echo "... install"
@@ -467,7 +429,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... single_arm_control"
+	@echo "... sct_test"
 	@echo "... sinsun_robot_gencpp"
 	@echo "... sinsun_robot_generate_messages"
 	@echo "... sinsun_robot_generate_messages_cpp"
@@ -475,23 +437,19 @@ help:
 	@echo "... sinsun_robot_generate_messages_py"
 	@echo "... sinsun_robot_genlisp"
 	@echo "... sinsun_robot_genpy"
-	@echo "... socket_com_test"
 	@echo "... test"
-	@echo "... src/command_test.o"
-	@echo "... src/command_test.i"
-	@echo "... src/command_test.s"
-	@echo "... src/demo.o"
-	@echo "... src/demo.i"
-	@echo "... src/demo.s"
+	@echo "... src/cmd_test.o"
+	@echo "... src/cmd_test.i"
+	@echo "... src/cmd_test.s"
+	@echo "... src/demostration.o"
+	@echo "... src/demostration.i"
+	@echo "... src/demostration.s"
 	@echo "... src/hdh_com.o"
 	@echo "... src/hdh_com.i"
 	@echo "... src/hdh_com.s"
-	@echo "... src/single_arm_control.o"
-	@echo "... src/single_arm_control.i"
-	@echo "... src/single_arm_control.s"
-	@echo "... src/socket_com_test.o"
-	@echo "... src/socket_com_test.i"
-	@echo "... src/socket_com_test.s"
+	@echo "... src/sct_test.o"
+	@echo "... src/sct_test.i"
+	@echo "... src/sct_test.s"
 .PHONY : help
 
 
